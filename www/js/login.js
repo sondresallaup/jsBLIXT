@@ -4,8 +4,8 @@ function checkCookie(){
 	}
 }
 
-function isInt(string){
-	return !isNaN(string);
+function isUser_id(string){
+	return (string != 'error');
 }
 
 $("button#submit").click( function() {
@@ -16,7 +16,7 @@ $("button#submit").click( function() {
     $.post( $("#loginform").attr("action"),
 	        $("#loginform :input").serializeArray(),
 			function(data) {
-				if(isInt(data)){
+				if(isUser_id(data)){
 			  		localStorage.setItem('user_id', data);
 			  		checkCookie();
 			  	}
