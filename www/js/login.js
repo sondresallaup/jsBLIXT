@@ -1,3 +1,9 @@
+function checkCookie(){
+	if(localStorage.getItem('user_id') != "" && localStorage.getItem('user_id') != null){
+		window.location = ('pages/main.html');
+	}
+}
+
 $("button#submit").click( function() {
  
   if( $("#username").val() == "" || $("#password").val() == "" )
