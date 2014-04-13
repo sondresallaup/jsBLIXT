@@ -13,8 +13,9 @@ $("button#submit").click( function() {
     $.post( $("#loginform").attr("action"),
 	        $("#loginform :input").serializeArray(),
 			function(data) {
-				if(data.success){
-			  		localStorage.setItem('user_id', data.success);
+				var returnStr = data;
+				if(isUser_id(returnStr)){
+			  		localStorage.setItem('user_id', returnStr);
 			  		checkCookie();
 			  	}
 			  	else{
@@ -29,5 +30,5 @@ $("button#submit").click( function() {
 });
 
 function isUser_id(string){
-	return (string != false);
+	return (string != "false");
 }
