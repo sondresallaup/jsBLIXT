@@ -5,12 +5,7 @@ function checkCookie(){
 }
 
 function isInt(string){
-	if (string == parseInt(string)) {
-		return true;
-	}
-	else{
-		return false;
-	}
+	return !isNaN(string);
 }
 
 $("button#submit").click( function() {
