@@ -14,13 +14,6 @@ $("button#submit").click( function() {
 	        $("#loginform :input").serializeArray(),
 			function(data) {
 				$("div#loginmsg").html(data);
-				if(isUser_id(data)){
-			  		localStorage.setItem('user_id', data);
-			  		checkCookie();
-			  	}
-			  	else{
-		  			$("div#loginmsg").html(data);
-			  	}
 			});
  
 	$("#loginform").submit( function() {
