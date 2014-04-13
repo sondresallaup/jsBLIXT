@@ -1,5 +1,9 @@
 function checkCookie(){
-	if(localStorage.getItem('user_id') != "" && localStorage.getItem('user_id') != null){
+	if(localStorage.getItem('user_id') == "false"){
+		
+	}
+
+	else if(localStorage.getItem('user_id') != "" && localStorage.getItem('user_id') != null){
 		window.location = ('pages/main.html');
 	}
 }
@@ -14,6 +18,7 @@ $("button#submit").click( function() {
 	        $("#loginform :input").serializeArray(),
 			function(data) {
 				$("div#loginmsg").html(data);
+				localStorage.setItem('user_id',data);
 			});
  
 	$("#loginform").submit( function() {
