@@ -4,9 +4,6 @@ function checkCookie(){
 	}
 }
 
-function isUser_id(string){
-	return !(string == 'error');
-}
 
 $("button#submit").click( function() {
  
@@ -30,3 +27,7 @@ $("button#submit").click( function() {
 	});
  
 });
+
+function isUser_id(string){
+	return (string != "error");
+}
