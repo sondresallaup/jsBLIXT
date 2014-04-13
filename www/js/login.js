@@ -13,7 +13,7 @@ $("button#submit").click( function() {
     $.post( $("#loginform").attr("action"),
 	        $("#loginform :input").serializeArray(),
 			function(data) {
-				if(data.sucess){
+				if(data.success){
 			  		localStorage.setItem('user_id', data.success);
 			  		checkCookie();
 			  	}
