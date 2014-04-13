@@ -15,6 +15,7 @@
     <author href="http://sondresallaup.com" email="support@sondresallaup.com">
         Sondre Sallaup team
     </author>
+    <icon src="img/icon.png" />
 
     <preference name="phonegap-version" value="3.3.0" /> 
 

@@ -4,6 +4,15 @@ function checkCookie(){
 	}
 }
 
+function isInt(string){
+	if (string == parseInt(string)) {
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
 $("button#submit").click( function() {
  
   if( $("#username").val() == "" || $("#password").val() == "" )
@@ -12,8 +21,13 @@ $("button#submit").click( function() {
     $.post( $("#loginform").attr("action"),
 	        $("#loginform :input").serializeArray(),
 			function(data) {
-			  localStorage.setItem('user_id', data);
-			  checkCookie();
+				if(isInt(data)){
+			  		localStorage.setItem('user_id', data);
+			  		checkCookie();
+			  	}
+			  	else{
+		  			$("div#loginmsg").html(data);
+			  	}
 			});
  
 	$("#loginform").submit( function() {
