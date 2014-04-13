@@ -13,14 +13,14 @@ $("button#submit").click( function() {
     $.post( $("#loginform").attr("action"),
 	        $("#loginform :input").serializeArray(),
 			function(data) {
-				if(isUser_id(data)){
-			  		localStorage.setItem('user_id', data);
+				if(data.sucess){
+			  		localStorage.setItem('user_id', data.success);
 			  		checkCookie();
 			  	}
 			  	else{
 		  			$("div#loginmsg").html(data);
 			  	}
-			},'text');
+			},'json');
  
 	$("#loginform").submit( function() {
 	   return false;	
@@ -29,5 +29,5 @@ $("button#submit").click( function() {
 });
 
 function isUser_id(string){
-	return (string != "error");
+	return (string != false);
 }
