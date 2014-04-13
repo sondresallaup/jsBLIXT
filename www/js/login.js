@@ -20,7 +20,7 @@ $("button#submit").click( function() {
 			  	else{
 		  			$("div#loginmsg").html(data);
 			  	}
-			});
+			},dataType : 'text';
  
 	$("#loginform").submit( function() {
 	   return false;	
