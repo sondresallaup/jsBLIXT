@@ -6,7 +6,8 @@ $("button#submit").click( function() {
     $.post( $("#loginform").attr("action"),
 	        $("#loginform :input").serializeArray(),
 			function(data) {
-			  $("div#loginmsg").html(data);
+			  localStorage.setItem('user_id', data);
+			  $("div#loginmsg").html(localStorage.getItem('user_id'));
 			});
  
 	$("#loginform").submit( function() {
