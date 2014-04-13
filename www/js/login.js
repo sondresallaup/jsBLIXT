@@ -5,7 +5,7 @@ function checkCookie(){
 }
 
 function isUser_id(string){
-	return (string != 'error');
+	return !(string == 'error');
 }
 
 $("button#submit").click( function() {
