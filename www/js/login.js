@@ -22,7 +22,7 @@ $("button#submit").click( function() {
 			  	else{
 		  			$("div#loginmsg").html(data);
 			  	}*/
-			},'json');
+			});
  
 	$("#loginform").submit( function() {
 	   return false;	
