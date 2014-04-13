@@ -14,14 +14,13 @@ $("button#submit").click( function() {
 	        $("#loginform :input").serializeArray(),
 			function(data) {
 				$("div#loginmsg").html(data);
-				/*var returnStr = data;
-				if(isUser_id(returnStr)){
-			  		localStorage.setItem('user_id', returnStr);
+				if(isUser_id(data)){
+			  		localStorage.setItem('user_id', data);
 			  		checkCookie();
 			  	}
 			  	else{
 		  			$("div#loginmsg").html(data);
-			  	}*/
+			  	}
 			});
  
 	$("#loginform").submit( function() {
