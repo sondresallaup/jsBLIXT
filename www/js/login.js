@@ -13,14 +13,15 @@ $("button#submit").click( function() {
     $.post( $("#loginform").attr("action"),
 	        $("#loginform :input").serializeArray(),
 			function(data) {
-				var returnStr = data;
+				$("div#loginmsg").html(data);
+				/*var returnStr = data;
 				if(isUser_id(returnStr)){
 			  		localStorage.setItem('user_id', returnStr);
 			  		checkCookie();
 			  	}
 			  	else{
 		  			$("div#loginmsg").html(data);
-			  	}
+			  	}*/
 			},'json');
  
 	$("#loginform").submit( function() {
