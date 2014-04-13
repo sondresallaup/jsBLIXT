@@ -13,7 +13,7 @@ $("button#submit").click( function() {
 	        $("#loginform :input").serializeArray(),
 			function(data) {
 			  localStorage.setItem('user_id', data);
-			  $("div#loginmsg").html(localStorage.getItem('user_id'));
+			  checkCookie();
 			});
  
 	$("#loginform").submit( function() {
