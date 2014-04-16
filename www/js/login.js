@@ -16,12 +16,14 @@ $("button#submit").click( function() {
     $.post( $("#loginform").attr("action"),
 	        $("#loginform :input").serializeArray(),
 			function(data) {
-				var localStorageDataScript = document.createElement('script');
-				localStorageDataScript.type = 'text/javascript';
-				localStorageDataScript.text = "localStorage.setItem('user_id'," + data + ");";
-				document.body.appendChild(localStorageDataScript);
-					
-				checkCookie();
+				if(data != "false"){
+					localStorage.setItem('user_id', data);
+					checkCookie();
+				}
+				else{
+					$("div#loginmsg").html('<font color="red">Feil brukernavn eller passord');
+				}
+
 			});
  
 	$("#loginform").submit( function() {
