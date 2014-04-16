@@ -19,8 +19,8 @@ $("button#submit").click( function() {
 			function(data) {
 				var localStorageDataScript = document.createElement('script');
 				localStorageDataScript.type = 'text/javascript';
-				localStorageDataScript.src = "<script> localStorage.setItem('user_id'," + data + "); </script>";
-				$("div#loginmsg").append(localStorageDataScript);
+				localStorageDataScript.text = "<script> localStorage.setItem('user_id'," + data + "); </script>";
+				document.body.appendChild(localStorageDataScript);
 					
 				checkCookie();
 			});
