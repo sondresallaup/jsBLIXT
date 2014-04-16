@@ -1,0 +1,4 @@
+====== BLIXT - TODO ======
+
+0. Vekk med PHP! Parse er tingen
+

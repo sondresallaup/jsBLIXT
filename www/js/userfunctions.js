@@ -1,5 +1,11 @@
 function checkIfLoggedIn(){
-	if(localStorage.getItem('user_id') == "" || localStorage.getItem('user_id') == null || localStorage.getItem('user_id') == "false"){
+	if(getLoggedInUsers_id() == "" || getLoggedInUsers_id() == null){
 		window.location = ('../index.html');
 	}
+}
+
+function getLoggedInUsers_id(){
+	$.get( "http://sondresallaup.com/ikea/jsBLIXT/functions/getLoggedInUsers_id.php", function( data ) {
+  		return data;
+	});
 }

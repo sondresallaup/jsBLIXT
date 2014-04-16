@@ -7,13 +7,14 @@
         <link href = "css/bootstrap.css" rel = "stylesheet">
         <link href="css/signin.css" rel="stylesheet">
         <link href="css/customstyle.css" rel="stylesheet">
+        <script src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
     </head>
     <body onload="checkCookie()" style="background-image:url('img/signin/field.png');padding:5px;border:0px solid black;background-repeat:no-repeat;>">
 
     	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     	<div>
-    		<form method="POST" action="http://sondresallaup.com/ikea/jsBLIXT/functions/login.php" id="loginform">
+    		<form method="POST" id="loginform">
 	    		<input type="username" class="form-control" name="username" placeholder="E-post" id="username" autofocus></>
 	    		<input type="password" class="form-control" name="password" placeholder="Passord" id="password"></>
 	    		<div id="loginmsg"></div>
@@ -31,6 +32,7 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/typeahead.min.js"></script>
 		<script src="js/extrajs.js"></script>
+        <script src="js/userfunctions.js"></script>
 		<script src="js/login.js"></script>
 	</body>
 </html>
