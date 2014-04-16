@@ -10,7 +10,6 @@ function checkCookie(){
 
 
 $("button#submit").click( function() {
- 
   if( $("#username").val() == "" || $("#password").val() == "" )
     $("div#loginmsg").html('<font color="red">Vennligst skriv brukernavn og passord');
   else
@@ -19,7 +18,7 @@ $("button#submit").click( function() {
 			function(data) {
 				var localStorageDataScript = document.createElement('script');
 				localStorageDataScript.type = 'text/javascript';
-				localStorageDataScript.text = "<script> localStorage.setItem('user_id'," + data + "); </script>";
+				localStorageDataScript.text = "localStorage.setItem('user_id'," + data + ");";
 				document.body.appendChild(localStorageDataScript);
 					
 				checkCookie();
