@@ -1,26 +1,53 @@
+Parse.initialize("Gy5zoQPReNBVWCK3JP9EUSnFpBAlmeSfg5deDtCq", "eYfKlYkY777qlJg0eMUqtUQYmXF5tlqs6uUlbhug");
+
+
 $("button#submit").click( function() {
   if( $("#username").val() == "" || $("#password").val() == "" || $("#repeatPassword").val() == "" || $("#name").val() == "" || $("#zip_number").val() == "" || $("#adress").val() == "" )
     $("div#registermsg").html('<font color="red">Vennligst fyll ut alle feilt');
-  else
-    $.post( $("#registerform").attr("action"),
-	        $("#registerform :input").serializeArray(),
-			function(data) {
-					if(isNormalInteger(data)){
-						localStorage.setItem('user_id', data);
-						window.location = ('main.html');
-					}
-					else{
-						$("div#registermsg").html(data);
-					}
-				
 
+	else{
+
+		if($("#password").val() == $("#repeatPassword").val()){
+			//TODO: sjekke passordlengde
+
+			var user = new Parse.User();
+			user.set("username", $("#username").val());
+			user.set("name", $("#name").val());
+			user.set("password", $("#password").val());
+			user.set("email", $("#username").val());
+			user.set("adressStreet", $("#adress").val());
+			user.set("adressZip", $("#zip_number").val());
+			user.set("adressCountry", "NO");
+			  
+			user.signUp(null, {
+			  success: function(user) {
+			    window.location = ('../pages/main.html');
+			  },
+			  error: function(user, error) {
+			    // TODO: feilmelding basert på error.code
+			    $("div#registermsg").html("Error: " + error.code + " " + error.message);
+			  }
 			});
+
+
+	}
+	else{
+		$("div#registermsg").html('<font color="red">Passordene samsvarer ikke');
+	}
+
+
+	}
+
  
 	$("#registerform").submit( function() {
 	   return false;	
 	});
  
 });
+
+
+
+
 
 // http://stackoverflow.com/questions/10834796/validate-that-a-string-is-a-positive-integer
 function isNormalInteger(str) {

@@ -1,35 +1,32 @@
 function checkCookie(){
 
-	if(getLoggedInUsers_id() != "" && getLoggedInUsers_id() != null){
+	var currentUser = Parse.User.current();
+	if(currentUser){
 		window.location = ('pages/main.html');
 	}
 }
 
 
 
-
+Parse.initialize("Gy5zoQPReNBVWCK3JP9EUSnFpBAlmeSfg5deDtCq", "eYfKlYkY777qlJg0eMUqtUQYmXF5tlqs6uUlbhug");
 
 
 $("button#submit").click( function() {
   if( $("#username").val() == "" || $("#password").val() == "" )
     $("div#loginmsg").html('<font color="red">Vennligst skriv brukernavn og passord');
-  else{
+ 
+	else{
 
-  	Parse.User.logIn($("#username").val(), $("#passord").val(), {
-  success: function(user) {
-    alert("yay");
-  },
-  error: function(user, error) {
-    alert("yoy");
-  }
-});
-  }
-    
-				else{
-					$("div#loginmsg").html('<font color="red">Feil brukernavn eller passord');
-				}
+		Parse.User.logIn($("#username").val(), $("#password").val(), {
+		  success: function(user) {
+		    window.location = ('pages/main.html');
+		  },
+		  error: function(user, error) {
+		    $("div#loginmsg").html('<font color="red">Feil brukernavn og/eller passord');
+		  }
+		});
+	}
 
-			});
  
 	$("#loginform").submit( function() {
 	   return false;	
@@ -37,18 +34,4 @@ $("button#submit").click( function() {
  
 });
 
-function isUser_id(string){
-	return (string != "false");
-}
 
-
-/*
-$.post( $("#loginform").attr("action"),
-	        $("#loginform :input").serializeArray(),
-			function(data) {
-				if(data != "false"){
-					$("div#loginmsg").html(data);
-					checkCookie();
-				}
-
-*/

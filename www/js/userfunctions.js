@@ -1,5 +1,8 @@
+Parse.initialize("Gy5zoQPReNBVWCK3JP9EUSnFpBAlmeSfg5deDtCq", "eYfKlYkY777qlJg0eMUqtUQYmXF5tlqs6uUlbhug");
+
 function checkIfLoggedIn(){
-	if(getLoggedInUsers_id() == "" || getLoggedInUsers_id() == null){
+	var currentUser = Parse.User.current();
+	if(!currentUser){
 		window.location = ('../index.html');
 	}
 }
