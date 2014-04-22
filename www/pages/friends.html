@@ -8,7 +8,21 @@
         <link href="../css/signin.css" rel="stylesheet">
         <link href="../css/customstyle.css" rel="stylesheet">
     </head>
-
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="../js/phpgetcontent/friends.js"></script>
-<div id="content"></div>
+<div id="content">
+    <h3>Venner</h3>
+    <form id="friendsForm">
+        <div class="input-group">
+        <input type="text" class="form-control" name="friend" placeholder="Legg til venn" id="friend"></>
+            <span class="input-group-btn">
+        <button class="btn btn-default" type="button" id="submit">Søk</button>
+      </span>
+            </div>
+    </form>
+    <div id="searchResult"></div>
+    <div id="friends"></div>
+    
+</div>
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+    <script src="../js/friends.js"></script>
