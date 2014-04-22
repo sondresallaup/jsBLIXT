@@ -6,10 +6,20 @@ $("button#submit").click( function() {
  
 	else{
         var friendQuery = new Parse.Query(Parse.User);
-        friendQuery.equalTo("name", $("#friend").val());
+        friendQuery.contains("canonicalName", $("#friend").val().toLocaleLowerCase());
         friendQuery.find({
             success: function(friends){
-                $("div#searchResult").html(this.get("name"));
+                var htmlResult = "";
+                for(x in friends){
+                    htmlResult += friends[x].attributes.name;
+                    htmlResult += "<br>";
+                }
+                $("div#searchResult").html(htmlResult);
+                
+                if(friends.length === 0){
+                    $("div#searchResult").html("Fant ingen samsvar");   
+                }
+                
             },
             error: function(){
             $("div#searchResult").html("Error:");

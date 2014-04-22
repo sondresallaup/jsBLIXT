@@ -13,6 +13,9 @@ $("button#submit").click( function() {
 			var user = new Parse.User();
 			user.set("username", $("#username").val());
 			user.set("name", $("#name").val());
+            
+            user.set("canonicalName", $("#name").val().toLowerCase());
+            
 			user.set("password", $("#password").val());
 			user.set("email", $("#username").val());
 			user.set("adressStreet", $("#adress").val());
