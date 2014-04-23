@@ -50,7 +50,7 @@ var app = {
     takePicture: function() {
       navigator.camera.getPicture( function( imageURI ) {
           var pictureDiv = document.getElementById('picture');
-          pictureDiv.style.backgroundImage = "url(" + imageURI + ")";
+        $("div#picture").html('<img src="../img/icon.png">');
         alert( imageURI );
       },
       function( message ) {
