@@ -20,6 +20,9 @@
     <preference name="phonegap-version" value="3.3.0" /> 
 
     <gap:plugin name="org.apache.cordova.core.camera" />
+    
+    
+    <feature name="http://api.phonegap.com/1.0/camera"/>
 
     <gap:splash src="img/splash.png" gap:platform="android" gap:density="ldpi" />
     <gap:splash src="img/splash.png" gap:platform="android" gap:density="mdpi" />
