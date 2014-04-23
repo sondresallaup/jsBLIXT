@@ -7,8 +7,7 @@ function checkIfLoggedIn(){
 	}
 }
 
-function getLoggedInUsers_id(){
-	$.get( "http://sondresallaup.com/ikea/jsBLIXT/functions/getLoggedInUsers_id.php", function( data ) {
-  		return data;
-	});
+function getCurrentUser(){
+    var currentUser = Parse.User.current();
+    return currentUser;
 }
