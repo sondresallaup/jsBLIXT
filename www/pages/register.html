@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SondreSallaup.com</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" content="text/html; charset=UTF-8">
+       <link href = "../css/ionic.css" rel = "stylesheet">
+    </head>
+    <body>
+        
+        <div class="bar bar-header bar-light">
+            <a class="button icon-left ion-chevron-left button-clear button-stable" href="../index.html">Logg inn</a>
+  <h1 class="title">Registrer</h1>
+</div><br><br>
+        <form method="POST" id="registerform">
+        <div class="list">
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">E-post</span>
+            <input type="email" placeholder="john@example.com" id="username" name="username" autofocus>
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Fullt navn</span>
+            <input type="text" placeholder="John Smith" id="name" name="name">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Adresse</span>
+            <input type="text" placeholder="Kongens gate 4" id="adress" name="adress">
+          </label>
+            <label class="item item-input item-stacked-label">
+            <span class="input-label">Postnummer</span>
+            <input type="number" placeholder="4630" id="zip_number" name="zip_number">
+          </label>
+            <label class="item item-input item-stacked-label">
+            <span class="input-label">Opprett passord</span>
+            <input type="password" id="password" name="password" placeholder="*********">
+          </label>
+            <label class="item item-input item-stacked-label">
+            <span class="input-label">Gjenta passord</span>
+            <input type="password" id="repeatPassword" name="repeatPassword" placeholder="*********">
+          </label>
+        </div>
+        <div id="registermsg"></div>
+        <button class="button button-block button-positive" id="submit"> Registrer deg</button>
+        </form>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/typeahead.min.js"></script>
+		<script src="../js/extrajs.js"></script>
+		<script src="../js/register.js"></script>
+	</body>
+</html>
+
+
