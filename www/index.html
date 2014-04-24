@@ -4,32 +4,42 @@
         <title>SondreSallaup.com</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" content="text/html; charset=UTF-8">
-        <link href = "css/bootstrap.css" rel = "stylesheet">
-        <link href="css/signin.css" rel="stylesheet">
-        <link href="css/customstyle.css" rel="stylesheet">
+        <link href = "css/ionic.css" rel = "stylesheet">
         <script src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
     </head>
     <body onload="checkCookie()" style="background-image:url('img/signin/field.png');padding:5px;border:0px solid black;background-repeat:no-repeat;>">
 
+        
+        
     	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-    	<div>
-    		<form id="loginform">
-	    		<input type="username" class="form-control" name="username" placeholder="E-post" id="username" autofocus></>
-	    		<input type="password" class="form-control" name="password" placeholder="Passord" id="password"></>
-	    		<div id="loginmsg"></div>
-	    		<button class="btn btn-lg btn-primary btn-block" name="submit" type="submit" id="submit">Logg inn</button>
-    		</form>
-    		<div class="btn-group btn-group-justified">
-    			<a href="pages/forgottenpassword.html" class="btn btn-default btn-sm" role="button">Glemt passord</a>
-    			<a href="pages/register.html" class="btn btn-default btn-sm" role="button">Registrer deg</a>
-    		</div>
-		</div>
+        
+        <form id="loginform">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="Brukernavn" id="username" autofocus>
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="Passord" id="password">
+          </label>
+            <button class="button button-block button-positive" id="submit"> Logg inn</button>
+        </div>
+        </form>
+            <div id="card" class="card" style ="display:none"><div id="loginmsg" class="item item-text-wrap"></div></div>
+        
+        <div class="tabs">
+          <a class="tab-item" href="pages/forgottenpassword.html">
+            Glemt passord?
+          </a>
+          <a class="tab-item" href="pages/register.html">
+            Registrer deg
+          </a>
+        </div>
+    	
+        
+    		
+		
 
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/typeahead.min.js"></script>
-		<script src="js/extrajs.js"></script>
         <script src="js/userfunctions.js"></script>
 		<script src="js/login.js"></script>
 	</body>
