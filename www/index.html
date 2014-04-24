@@ -3,7 +3,7 @@
     <head>
         <title>SondreSallaup.com</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no, initial-scale=1.0" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no, initial-scale=1.0">
         <link href = "css/ionic.css" rel = "stylesheet">
         <script src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
     </head>
@@ -26,7 +26,7 @@
         </form>
             <div id="card" class="card" style ="display:none"><div id="loginmsg" class="item item-text-wrap"></div></div>
         
-        <div class="tabs bar bar-footer">
+        <div class="tabs bar bar-footer" id="footer">
           <a class="tab-item" href="pages/forgottenpassword.html">
             Glemt passord?
           </a>
@@ -42,6 +42,16 @@
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="js/userfunctions.js"></script>
 		<script src="js/login.js"></script>
+        <script>
+            var initialScreenSize = window.innerHeight; 
+            window.addEventListener("resize", function() {
+               if(window.innerHeight < initialScreenSize){
+                    $("#footer").hide(); 
+               } else{ 
+                    $("#footer").show(); } });
+            }
+
+        </script>
 	</body>
 </html>
 
