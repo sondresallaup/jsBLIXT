@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SondreSallaup.com</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" content="text/html; charset=UTF-8">
+        <link href = "../css/ionic.css" rel = "stylesheet">
+    </head>
+    <body onload="checkIfLoggedIn()">
+
+<div class="bar bar-header bar-light">
+    <a class="button button-icon icon ion-navicon" href="../pages/settings.html"></a>
+  <h1 class="title">Profil</h1>
+</div>
+        
+   <!----- Content --->     
 <br><br>
 <div class="list card">
 
@@ -36,7 +52,34 @@
   </div>
 
 </div>
+        
 
 
-<link href = "../css/ionic.css" rel = "stylesheet">
+        
+        
+        
+        
+        
+<div class="tabs tabs-icon-only" id="footer">
+          <a class="tab-item" href="../pages/friends.html" target="maincontent">
+        <i class="icon ion-ios7-people"></i>
+      </a>
+      <a class="tab-item" href="../pages/main.html" target="maincontent">
+        <i class="icon ion-ios7-camera"></i>
+      </a>
+      <a class="tab-item" href="../pages/profile.html" target="maincontent">
+        <i class="icon ion-ios7-person-outline"></i>
+      </a>
+        </div>     
+        
 <script src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+<script src="../js/userfunctions.js"></script>
+<script>
+function goBack()
+  {
+  window.history.back()
+  }
+</script> 
+        
+</body>
+</html>

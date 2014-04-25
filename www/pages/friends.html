@@ -4,20 +4,29 @@
         <title>SondreSallaup.com</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" content="text/html; charset=UTF-8">
-        <link href = "../css/bootstrap.css" rel = "stylesheet">
-        <link href="../css/signin.css" rel="stylesheet">
-        <link href="../css/customstyle.css" rel="stylesheet">
+        <link href = "../css/ionic.css" rel = "stylesheet">
     </head>
+    <body onload="checkIfLoggedIn()">
+
+<div class="bar bar-header bar-light">
+    <a class="button button-icon icon ion-navicon" href="../pages/settings.html"></a>
+  <h1 class="title">Venner</h1>
+</div>
+        
+   <!----- Content --->  <br><br>   
 <div id="content">
-    <h3>Venner</h3>
     <form id="friendsForm">
-        <div class="input-group">
-        <input type="text" class="form-control" name="friend" placeholder="Legg til venn" id="friend"></>
-            <span class="input-group-btn">
-        <button class="btn btn-default" type="submit" id="submit">Søk</button>
-      </span>
-            </div>
-    </form>
+    <div class="list">
+  <div class="item item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="Legg til ny kontakt" id="friend" name="friend">
+    </label>
+    <button class="button button-small" type="submit" id="submit">
+      Søk
+    </button>
+  </div>
+</div></form>
+    
     <div id="searchResult"></div>
     <div id="friends"></div>
     
@@ -25,5 +34,35 @@
     
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+        
+
+
+        
+        
+        
+        
+        
+<div class="tabs tabs-icon-only" id="footer">
+          <a class="tab-item" href="../pages/friends.html" target="maincontent">
+        <i class="icon ion-ios7-people-outline"></i>
+      </a>
+      <a class="tab-item" href="../pages/main.html" target="maincontent">
+        <i class="icon ion-ios7-camera"></i>
+      </a>
+      <a class="tab-item" href="../pages/profile.html" target="maincontent">
+        <i class="icon ion-ios7-person"></i>
+      </a>
+        </div>        
+        
+<script src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
     <script src="../js/userfunctions.js"></script>
     <script src="../js/friends.js"></script>
+<script>
+function goBack()
+  {
+  window.history.back()
+  }
+</script> 
+        
+</body>
+</html>
