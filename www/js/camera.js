@@ -50,8 +50,7 @@ var app = {
     takePicture: function() {
         $("div#picture").html('<font size="6"><i class="icon ion-loading-c"></i></font>');
       navigator.camera.getPicture( function( imageURI ) {
-          var deviceHeight = element.clientHeight;
-        $("div#picture").html('<img src="'+ imageURI +'" height="'+ deviceHeight - 100 +'">');
+        $("div#picture").html('<img src="'+ imageURI +'" class="img-thumbnail">');
             document.getElementById("button").style.display = "none";
           document.getElementById("card").style.display = "block";
       },
