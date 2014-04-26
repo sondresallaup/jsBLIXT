@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SondreSallaup.com</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" content="text/html; charset=UTF-8">
+        <link href = "../css/ionic.css" rel = "stylesheet">
+<script src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+<script src="../js/userfunctions.js"></script>   
+        
+    </head>
+    <body onload="checkIfLoggedIn();">
+
+<div class="bar bar-header bar-light">
+    <a class="button icon-left ion-ios7-arrow-back button-clear button-stable" href="javascript:void(0)" onclick="goBack();"></a>
+  <h1 class="title">Rediger profil</h1>
+</div>
+        
+   <!----- Content --->     
+<br><br>
+        <form  method="POST" id="editProfileForm">
+        <div class="list">
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Navn</span>
+            <input type="text" name="name" id="name" placeholder="John Smith">
+          </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Adresse</span>
+            <input type="text" name="adress" id="adress" placeholder="Kongens gate 4">
+          </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Postnummer</span>
+            <input type="number" name="zip_number" id="zip_number" placeholder="4630">
+          </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">E-post</span>
+            <input type="email" name="email" id="email" placeholder="john@example.com">
+          </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Passord</span>
+            <br><a href="editPassword.html" class="button button-clear">endre passord</a>
+          </label>
+        </div>
+            <div id="registermsg"></div>
+            <button type="submit" id="submit" name="submit" class="button button-block button-positive">OK</button>
+        </form>
+        
+        
+        
+        
+        
+<div class="tabs tabs-icon-only" id="footer">
+          <a class="tab-item" href="../pages/friends.html" target="maincontent">
+        <i class="icon ion-ios7-people"></i>
+      </a>
+      <a class="tab-item" href="../pages/main.html" target="maincontent">
+        <i class="icon ion-ios7-camera"></i>
+      </a>
+      <a class="tab-item" href="#" target="maincontent">
+        <i class="icon ion-ios7-person-outline"></i>
+      </a>
+        </div>     
+
+        
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="../js/editprofile.js"></script>
+<script> getInputValues();</script>
+<script>
+function goBack()
+  {
+  window.history.back()
+  }
+</script> 
+        
+</body>
+</html>
