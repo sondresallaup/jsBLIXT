@@ -5,7 +5,7 @@ $("button#submit").click( function() {
     document.getElementById("okButton").innerHTML='<i class="icon ion-loading-c"></i>';
   if( $("#username").val() == "" || $("#password").val() == "" || $("#repeatPassword").val() == "" || $("#name").val() == "" || $("#zip_number").val() == "" || $("#adress").val() == "" ){
       document.getElementById("okButton").innerHTML='Registrer deg';
-    $("div#registermsg").html('<font color="red">Vennligst fyll ut alle feilt');}
+    $("div#registermsg").html('<font color="red">Vennligst fyll ut alle felt');}
 
 	else{
 
