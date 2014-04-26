@@ -12,8 +12,10 @@ Parse.initialize("Gy5zoQPReNBVWCK3JP9EUSnFpBAlmeSfg5deDtCq", "eYfKlYkY777qlJg0eM
 
 
 $("button#submit").click( function() {
+    document.getElementById("loginButton").innerHTML='<i class="icon ion-loading-c"></i>';
   if( $("#username").val() == "" || $("#password").val() == "" ){
       document.getElementById("card").style.display = "block";
+      document.getElementById("loginButton").innerHTML='Logg inn';
     $("div#loginmsg").html('<font color="red">Vennligst skriv brukernavn og passord');
   }
 	else{
@@ -24,6 +26,7 @@ $("button#submit").click( function() {
 		  },
 		  error: function(user, error) {
               document.getElementById("card").style.display = "block";
+              document.getElementById("loginButton").innerHTML='Logg inn';
 		    $("div#loginmsg").html('<font color="red">Feil brukernavn og/eller passord');
 		  }
 		});

@@ -9,11 +9,12 @@ function getInputValues() {
 }
 
 $("button#submit").click( function() {
+    document.getElementById("okButton").innerHTML='<i class="icon ion-loading-c"></i>';
   if( $("#email").val() == "" || $("#name").val() == "" || $("#zip_number").val() == "" || $("#adress").val() == ""){
+      document.getElementById("okButton").innerHTML='OK';
     $("div#registermsg").html('<font color="red">Vennligst fyll ut alle feilt');}
 
 	else{
-
         currentUser.save(null, {
           success: function(currentUser) {
               
@@ -27,8 +28,8 @@ $("button#submit").click( function() {
         currentUser.set("adressZip", $("#zip_number").val());
         currentUser.set("adressCountry", "NO");
         currentUser.save();
-        
-          $("div#registermsg").html("<font color='red'>Endringene er gjennomført!");
+            document.getElementById("okButton").innerHTML='OK';
+          $("div#registermsg").html("<font color='green'>Endringene er gjennomført!");
           },
           error: function(user, error) {
             // TODO: feilmelding basert på error.code
