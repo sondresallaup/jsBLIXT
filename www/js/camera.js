@@ -50,7 +50,7 @@ var app = {
     takePicture: function() {
         $("div#picture").html('<font size="6"><i class="icon ion-loading-c"></i></font>');
       navigator.camera.getPicture( function( imageURI ) {
-        $("div#picture").html('<img src="'+ imageURI +'" class="img-thumbnail">');
+        $("div#picture").html('<img src="'+ imageURI +'" class="img-rounded" height="350">');
             document.getElementById("button").style.display = "none";
           document.getElementById("card").style.display = "block";
       },
