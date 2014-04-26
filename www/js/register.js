@@ -2,8 +2,10 @@ Parse.initialize("Gy5zoQPReNBVWCK3JP9EUSnFpBAlmeSfg5deDtCq", "eYfKlYkY777qlJg0eM
 
 
 $("button#submit").click( function() {
-  if( $("#username").val() == "" || $("#password").val() == "" || $("#repeatPassword").val() == "" || $("#name").val() == "" || $("#zip_number").val() == "" || $("#adress").val() == "" )
-    $("div#registermsg").html('<font color="red">Vennligst fyll ut alle feilt');
+    document.getElementById("okButton").innerHTML='<i class="icon ion-loading-c"></i>';
+  if( $("#username").val() == "" || $("#password").val() == "" || $("#repeatPassword").val() == "" || $("#name").val() == "" || $("#zip_number").val() == "" || $("#adress").val() == "" ){
+      document.getElementById("okButton").innerHTML='Registrer deg';
+    $("div#registermsg").html('<font color="red">Vennligst fyll ut alle feilt');}
 
 	else{
 
@@ -28,6 +30,7 @@ $("button#submit").click( function() {
 			  },
 			  error: function(user, error) {
 			    // TODO: feilmelding basert på error.code
+                  document.getElementById("okButton").innerHTML='Registrer deg';
 			    $("div#registermsg").html("Error: " + error.code + " " + error.message);
 			  }
 			});
@@ -35,6 +38,7 @@ $("button#submit").click( function() {
 
 	}
 	else{
+        document.getElementById("okButton").innerHTML='Registrer deg';
 		$("div#registermsg").html('<font color="red">Passordene samsvarer ikke');
 	}
 
