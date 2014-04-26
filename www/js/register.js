@@ -26,7 +26,7 @@ $("button#submit").click( function() {
 			  
 			user.signUp(null, {
 			  success: function(user) {
-			    window.location = ('../pages/main.html');
+			    window.location = ('../walkthrough/');
 			  },
 			  error: function(user, error) {
 			    // TODO: feilmelding basert på error.code
