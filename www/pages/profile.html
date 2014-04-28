@@ -21,12 +21,32 @@
         
    <!----- Content --->     
 <br><br>
-
-<div class="card">
-  <div class="item item-text-wrap">
-    <b><i><a href="editprofile.html">Rediger profil</a></i></b>
-  </div>
-</div> 
+<div class="list" id="contactlist">
+    <a class="item item-avatar" href="#">
+      <img src="../img/icon.png">
+      <h2><script>document.write(currentUser.get("name"));</script></h2>
+        <p><script>document.write(currentUser.get("adressStreet"));</script></p>
+      <i><a href="editprofile.html" class="button button-outline button-small button-assertive">Rediger profil</a></i>
+    </a>
+</div>
+<h4>Sendte</h4>
+<div class="list">
+    <a class="item item-thumbnail-left" href="#">
+      <img src="../img/splash.png">
+      <h2>John Smith</h2>
+      <p>Nine Inch Nails</p>
+    </a>
+    <a class="item item-thumbnail-left" href="#">
+      <img src="../img/splash.png">
+      <h2>Pretty Hate Machine</h2>
+      <p>Nine Inch Nails</p>
+    </a>
+    <a class="item item-thumbnail-left" href="#">
+      <img src="../img/splash.png">
+      <h2>Pretty Hate Machine</h2>
+      <p>Nine Inch Nails</p>
+    </a>
+</div>
 
 
         
@@ -35,7 +55,7 @@
         
         
 <div class="tabs tabs-icon-only" id="footer">
-          <a class="tab-item" href="../pages/friends.html" target="maincontent">
+          <a class="tab-item" href="../pages/concactlist.html" target="maincontent">
         <i class="icon ion-ios7-people"></i>
       </a>
       <a class="tab-item" href="javascript:void(0);" onclick="app.takePicture();">

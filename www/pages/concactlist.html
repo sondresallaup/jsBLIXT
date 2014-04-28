@@ -10,27 +10,36 @@
 
 <div class="bar bar-header bar-light">
     <a class="button button-icon icon ion-navicon" href="../pages/settings.html"></a>
-  <h1 class="title">Venner</h1>
+  <h1 class="title">Kontaktliste</h1>
 </div>
         
    <!----- Content --->  <br><br>   
 <div id="content">
-    <form id="friendsForm">
-    <div class="list">
-  <div class="item item-input-inset">
-    <label class="item-input-wrapper">
-      <input type="text" placeholder="Legg til ny kontakt" id="friend" name="friend">
-    </label>
-    <button class="button button-small" type="submit" id="submit">
-      Søk
-    </button>
-  </div>
-</div></form>
+  <a class="button button-block icon-right ion-search" href="contactsearch.html">Legg til ny kontakt</a>
+
+    <div class="list" id="contactlist">
+    <a class="item item-avatar" href="#">
+      <img src="../img/icon.png">
+      <h2>John Smith</h2>
+      <p>Back off, man. I'm a scientist.</p>
+    </a>
+    <a class="item item-avatar" href="#">
+      <img src="../img/logo.png">
+      <h2>Smith John</h2>
+      <p>Back off, man. I'm a scientist.</p>
+    </a>
+    <a class="item item-avatar" href="#">
+      <img src="../img/icon.png">
+      <h2>John Smith</h2>
+      <p>Back off, man. I'm a scientist.</p>
+    </a>
+</div>
     
-    <div id="searchResult"></div>
-    <div id="friends"></div>
+    
+    
     
 </div>
+
     
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
