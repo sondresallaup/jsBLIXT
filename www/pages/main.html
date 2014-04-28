@@ -7,14 +7,17 @@
         <link href = "../css/ionic.css" rel = "stylesheet">
         <link href="../css/bootstrap.min.css" rel="stylesheet">
     </head>
-    <body onload="checkIfLoggedIn()">
+    <body onload="checkIfLoggedIn()"  style="background-image:url('../img/signin/mountain.png');padding:5px;border:0px solid black;background-repeat:no-repeat;>">
 
 <div class="bar bar-header bar-light">
     <a class="button button-icon icon ion-navicon" href="../pages/settings.html"></a>
   <h1 class="title">BLIXT</h1>
 </div>
         
-   <!----- Content ---><br><br>
+   <!----- Content --->
+        
+        
+<!----<br><br>
 <div class="list card" style ="display:none" id="card">
   <div class="item item-image" id="picture"></div>
   <a class="item item-icon-left assertive" href="#">
@@ -25,15 +28,15 @@
 <br>
 <div class="app">
 <button class="button button-block button-positive icon ion-ios7-camera" onclick="app.takePicture();" id="button"> Ta bilde</button>
-</div>
+</div>------>
         
              
 <div class="tabs tabs-icon-only" id="footer">
           <a class="tab-item" href="../pages/friends.html" target="maincontent">
         <i class="icon ion-ios7-people"></i>
       </a>
-      <a class="tab-item" href="#" target="maincontent">
-        <i class="icon ion-ios7-camera-outline"></i>
+      <a class="tab-item" href="javascript:void(0);" onclick="app.takePicture();">
+        <i class="icon ion-ios7-camera"></i>
       </a>
       <a class="tab-item" href="../pages/profile.html" target="maincontent">
         <i class="icon ion-ios7-person"></i>
