@@ -38,7 +38,7 @@
           <a class="tab-item" href="../pages/friends.html" target="maincontent">
         <i class="icon ion-ios7-people"></i>
       </a>
-      <a class="tab-item" href="../pages/main.html" target="maincontent">
+      <a class="tab-item" href="#" onclick="app.takePicture();">
         <i class="icon ion-ios7-camera"></i>
       </a>
       <a class="tab-item" href="#" target="maincontent">
@@ -47,7 +47,12 @@
         </div>     
 
         
-<script src="http://code.jquery.com/jquery-latest.js"></script>     
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="../phonegap.js"></script>
+<script type="text/javascript" src="../js/camera.js"></script>
+<script type="text/javascript">
+    app.initialize();
+</script>
 <script>
 function goBack()
   {
