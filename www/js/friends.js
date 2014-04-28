@@ -11,33 +11,18 @@ $("button#submit").click( function() {
             success: function(friends){
                 var htmlResult = "";
                 for(x in friends){
-                    htmlResult += '<li><b>';
+                    htmlResult += '<a class="item item-avatar" href="#"><img src="../img/defaultprofilepic.jpg"><h2>';
                     htmlResult += friends[x].attributes.name;
-                    htmlResult += "  </b>";
-                    var friendString = "'" + friends[x].attributes.username + "'";
-                    var addFriendButton = htmlResult + '<a href="#" onclick="addFriend(' + friendString + ');" class="btn btn-default btn-xs" role="button">Legg til kontakt</a>';
-                    var deleteFriendButton = htmlResult + '<a href="#" onclick="deleteFriend(' + friendString + ');" class="btn btn-default btn-xs" role="button">Slett kontakt</a>';
-                    addFriendButton += '</li>';
-                    deleteFriendButton += '</li>';
-                
-                //function isFriends
-                var Friends = Parse.Object.extend("Friends");
-                var query = new Parse.Query(Friends);
-                 var from_user = getCurrentUser().get("username");
-                query.equalTo("from_user", from_user);
-                query.equalTo("to_user", friends[x].attributes.username);
-                query.find({
-                    success: function(result){
-                        if(result.length > 0){
-                            $("div#searchResult").html(deleteFriendButton); 
-                        }
-                        else{
-                            $("div#searchResult").html(addFriendButton); 
-                        }
-                    }
-                });
-                
+                    htmlResult += "</h2><p>";
+                    htmlResult += friends[x].attributes.username;
+                    htmlResult += "</p></a>";
+                    //var friendString = "'" + friends[x].attributes.username + "'";
+                    /*var addFriendButton = htmlResult + '<a href="#" onclick="addFriend(' + friendString + ');" class="btn btn-default btn-xs" role="button">Legg til kontakt</a>';
+                    var deleteFriendButton = htmlResult + '<a href="#" onclick="deleteFriend(' + friendString + ');" class="btn btn-default btn-xs" role="button">Slett kontakt</a>';*/
                 }
+                
+                $("div#searchResult").html(htmlResult);
+                
                 if(friends.length === 0){
                     $("div#searchResult").html("Fant ingen samsvar");   
                 }
