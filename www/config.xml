@@ -16,6 +16,8 @@
         Den lille app-fabrikken
     </author>
     <icon src="img/icon.png" />
+    
+    <preference name="android-minSdkVersion" value="11" />
 
     <preference name="phonegap-version" value="3.3.0" /> 
     <preference name="fullscreen" value="false" />

@@ -11,3 +11,4 @@ function getCurrentUser(){
     var currentUser = Parse.User.current();
     return currentUser;
 }
+

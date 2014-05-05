@@ -14,7 +14,8 @@ $("button#submit").click( function() {
                     htmlResult += '<a class="item item-avatar" href="#"><img src="../img/defaultprofilepic.jpg"><h2>';
                     htmlResult += friends[x].attributes.name;
                     htmlResult += "</h2><p>";
-                    htmlResult += friends[x].attributes.username;
+                    var friendString = "'" + friends[x].attributes.username + "'";
+                    htmlResult += '<button onclick="addFriend(' + friendString + ');" class="button button-outline button-positive button-small">Legg til</button>';
                     htmlResult += "</p></a>";
                     //var friendString = "'" + friends[x].attributes.username + "'";
                     /*var addFriendButton = htmlResult + '<a href="#" onclick="addFriend(' + friendString + ');" class="btn btn-default btn-xs" role="button">Legg til kontakt</a>';
@@ -77,6 +78,7 @@ function addFriend(to_user){
                 alert(error);   
             }
         });
+    window.location = ('concactlist.html');
     
 }
     
