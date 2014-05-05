@@ -17,7 +17,8 @@
     </author>
     <icon src="img/icon.png" />
     
-    <preference name="android-minSdkVersion" value="11" />
+    <preference name="android-targetSdkVersion" value="12" />
+    <preference name="orientation" value="portrait" />
 
     <preference name="phonegap-version" value="3.3.0" /> 
     <preference name="fullscreen" value="false" />
