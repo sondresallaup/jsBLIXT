@@ -1,3 +1,28 @@
+$("div#contactlist").html('<font size="10"><i class="icon ion-loading-c"></i></font>');
+
+function printUsersNameByEmail(email) {
+    var returnValue = "";
+    var getUserQuery = new Parse.Query(Parse.User);
+    getUserQuery.equalTo("username", email);
+    getUserQuery.find({
+        success: function test(contact) {
+            return "foo bar ";
+             returnValue += '<a class="item item-avatar" href="#"><img src="../img/defaultprofilepic.jpg"><h2>';
+                    //returnValue += contact.attributes.name;
+                    //returnValue += contact.get("name");
+                    returnValue += "</h2><p>";
+                     returnValue += "</p></a>";
+            
+                     return returnValue;
+            
+        },
+            error: function(){
+            return "error";
+        }
+    });
+    return test;
+}
+
 var currentUser = Parse.User.current();
 var contactlist = Parse.Object.extend("Friends");
 var friendQuery = new Parse.Query(contactlist);
@@ -6,18 +31,28 @@ var friendQuery = new Parse.Query(contactlist);
             success: function(friends){
                 var htmlResult = "";
                 for(x in friends){
-                    htmlResult += '<a class="item item-avatar" href="#"><img src="../img/defaultprofilepic.jpg"><h2>';
-                    htmlResult += friends[x].attributes.to_user;
-                    htmlResult += "</h2><p>";/*
-                    var friendString = "'" + friends[x].attributes.username + "'";
-                    htmlResult += '<button onclick="addFriend(' + friendString + ');" class="button button-outline button-positive button-small">Legg til</button>';*/
-                    htmlResult += "</p></a>";
-                    //var friendString = "'" + friends[x].attributes.username + "'";
-                    /*var addFriendButton = htmlResult + '<a href="#" onclick="addFriend(' + friendString + ');" class="btn btn-default btn-xs" role="button">Legg til kontakt</a>';
-                    var deleteFriendButton = htmlResult + '<a href="#" onclick="deleteFriend(' + friendString + ');" class="btn btn-default btn-xs" role="button">Slett kontakt</a>';*/
+                    var email = friends[x].attributes.to_user;
+                    var returnValue = "";
+                    var getUserQuery = new Parse.Query(Parse.User);
+                    getUserQuery.equalTo("username", email);
+                    getUserQuery.find({
+                        success: function (contact) {
+                             returnValue += '<a class="item item-avatar" href="#"><img src="../img/defaultprofilepic.jpg"><h2>';
+                                    returnValue += contact[0].get("name");
+                                    returnValue += "</h2><p>";
+                                     returnValue += "</p></a>";
+
+                                     htmlResult =  returnValue;
+                            
+                            $("div#contactlist").html(htmlResult);
+
+                        },
+                            error: function(){
+                            return "error";
+                        }
+                    });    
+                    
                 }
-                
-                $("div#contactlist").html(htmlResult);
                 
                 if(friends.length === 0){
                     $("div#contactlist").html("Legg til noen kontakter!");   
@@ -30,13 +65,3 @@ var friendQuery = new Parse.Query(contactlist);
         });
 
 
-function printUsersNameByEmail(email){
-    var getUserQuery = new Parse.Query(Parse.User);
-    getUserQuery.equalTo("email",email);
-    getUserQuery.find({
-        success: function(){
-               
-            
-        }
-    });
-}
